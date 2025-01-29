@@ -1,4 +1,4 @@
-#include "sqlite.h"
+#include "sqlite.hpp"
 #include <iostream>
 
 SQLite sqlite("database.sqlite");

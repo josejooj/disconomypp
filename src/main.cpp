@@ -2,9 +2,9 @@
 #include <inttypes.h>
 #include <dpp/dpp.h>
 #include <cstdlib>
-#include "utils/env.h"
-#include "utils/log.h"
-#include "database/sqlite.h"
+#include "utils/env.hpp"
+#include "utils/log.hpp"
+#include "database/sqlite.hpp"
 
 using std::string;
 
@@ -34,7 +34,7 @@ int main()
 
 	bot.on_ready([&bot](auto event)
 				 {
-
+					
 		log(LogLevel::INFO, "DISCORD", "Disconomy++ online!");
 		
 		if (dpp::run_once<struct register_bot_commands>()) {

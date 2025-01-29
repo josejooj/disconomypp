@@ -5,9 +5,10 @@
 #include <string>
 #include <vector>
 
-class SQLite {
+class SQLite
+{
 public:
-    SQLite(const std::string& dbName);
+    SQLite(const std::string &dbName);
     ~SQLite();
 
     bool open();
@@ -15,7 +16,7 @@ public:
 
 private:
     std::string dbName;
-    sqlite3* db;
+    sqlite3 *db;
 };
 
 extern SQLite sqlite;

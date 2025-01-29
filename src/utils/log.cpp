@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "log.h"
+#include "log.hpp"
 
 using std::cerr;
 using std::cout;
