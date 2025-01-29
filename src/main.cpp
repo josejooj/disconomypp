@@ -3,6 +3,7 @@
 #include <dpp/dpp.h>
 #include <cstdlib>
 #include "utils/env.h"
+#include "utils/log.h"
 #include "database/sqlite.h"
 
 using std::string;
@@ -13,9 +14,13 @@ int main()
 	if (load_env() != 0)
 		return 1;
 
-	if (sqlite.open()) {
-		std::cout << "Banco de dados conectado com sucesso." << std::endl;
-	} else {
+	if (sqlite.open())
+	{
+		log(LogLevel::INFO, "DATABASE", "Connected to database succesfully.");
+	}
+	else
+	{
+		log(LogLevel::INFO, "DATABASE", "Can't connect to database. Shutting Down.");
 		return 1;
 	};
 
@@ -30,7 +35,7 @@ int main()
 	bot.on_ready([&bot](auto event)
 				 {
 
-		std::cout << "\x1b[32m[\x1b[36mDISCORD\x1b[32m] - Disconomy++ online!\x1b[0m\n";
+		log(LogLevel::INFO, "DISCORD", "Disconomy++ online!");
 		
 		if (dpp::run_once<struct register_bot_commands>()) {
 			bot.global_command_create(
