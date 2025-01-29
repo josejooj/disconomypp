@@ -2,7 +2,8 @@
 #include <inttypes.h>
 #include <dpp/dpp.h>
 #include <cstdlib>
-#include "utils/env.cpp"
+#include "utils/env.h"
+#include "database/sqlite.h"
 
 using std::string;
 
