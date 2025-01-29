@@ -13,6 +13,12 @@ int main()
 	if (load_env() != 0)
 		return 1;
 
+	if (sqlite.open()) {
+		std::cout << "Banco de dados conectado com sucesso." << std::endl;
+	} else {
+		return 1;
+	};
+
 	dpp::cluster bot(std::getenv("DISCORD_BOT_TOKEN"), dpp::i_guilds);
 
 	bot.on_slashcommand([](auto event)
