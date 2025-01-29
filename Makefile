@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++17
+CXXFLAGS = -Wall -pedantic -std=c++17
 LDFLAGS = -ldpp -lsqlite3  # Aqui incluímos -ldpp e -lsqlite3
 
 SRC_DIR = src
