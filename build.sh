@@ -1,2 +1,3 @@
-g++ src/main.cpp -o build -ldpp
-./build
+make
+# cd build
+./build/disconomy
